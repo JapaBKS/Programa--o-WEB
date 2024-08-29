@@ -1,0 +1,106 @@
+html {
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: black;
+    padding: 50px;
+}
+
+nav {
+    display: flex;           
+    justify-content: center; 
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+nav li {
+    margin: 0 100px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.conteudo {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.conteudo h1 {
+    margin-left: 80px;
+}
+
+.login-container {
+    background-color: #fff;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.login-container input[type="email"],
+        .login-container input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+}
+
+.login-container button {
+    width: 95%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.texto {
+    background-color: rgb(249, 247, 247);
+    margin-top: 5000px;
+    margin-bottom: 5000px;
+    padding: 25px;
+}
+
+.topo {
+    display: flex;
+}
+
+.topo img {
+    width: 300px;
+}
+
+.titulo {
+    align-self: center;
+}
+
+.caixa {
+    align-items: center;
+    background-color: rgb(249, 247, 247);
+    width: 98%;
+    height: 600px;
+    margin: auto;
+}
+
+* {
+    margin: 0;
+}

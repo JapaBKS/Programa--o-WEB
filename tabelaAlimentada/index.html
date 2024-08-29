@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+    <script>
+
+        let ordem = 1
+        
+        function adicionarDados() {
+            const email = document.getElementById('id_email').value;
+            const senha = document.getElementById('id_senha').value;
+
+            if (email && senha) {
+                const tabela = document.getElementById("id_table").getElementsByTagName('tbody')[0]
+                const novaLinha = tabela.insertRow();
+
+                const celulaOrdem = novaLinha.insertCell()
+                const celulaEmail = novaLinha.insertCell()
+                const celulaSenha = novaLinha.insertCell()
+
+                celulaOrdem.textContent = ordem
+                celulaEmail.textContent = email
+                celulaSenha.textContent = senha
+
+                ordem++
+
+                document.getElementById("id_email").value = '';
+                document.getElementById("id_senha").value = '';
+            }
+            else {
+                alert("Não há dados para adicionar");
+            }
+        }
+
+        function removerUltimosDados() {
+            const tabela = document.getElementById("id_table").getElementsByTagName('tbody')[0];
+            const numeroDeLinhas = tabela.rows.length;
+
+            // Verifica se há linhas para remover
+            if (numeroDeLinhas > 0) {
+                tabela.deleteRow(numeroDeLinhas - 1);
+                ordem--; // Decrementa o contador de ordem
+            } else {
+                alert("Não há dados para remover");
+            }
+        }
+    </script>
+
+</head>
+<body>
+    
+    <div class="login-container">
+        <label>Email</label>
+        <input type="email" id="id_email" placeholder="Email" required>
+
+        <label>Password</label>
+        <input type="password" id="id_senha" placeholder="Senha" required>
+        <br>
+        <button onclick="adicionarDados();">Adicionar</button>
+        <button onclick="removerUltimosDados();">Remover Últimos Dados</button>
+    </div>
+
+    <div>
+        <table id="id_table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+</body>
+</html>

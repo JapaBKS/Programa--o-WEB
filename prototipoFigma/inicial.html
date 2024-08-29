@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+
+    <script>
+            function login(){
+				var email = "";
+				var senha = "";
+				var email_verifica = "brunokioshi01@gmail.com";
+				var senha_verifica = "123456";
+				email = document.getElementById("id_email").value;
+				senha = document.getElementById("id_senha").value;
+				
+				if(email === email_verifica && senha === senha_verifica){
+                    window.location.href = "logado.html";
+				}else{
+					alert("Deu errado!");
+				}
+			}
+    </script>
+
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="inicial.html">HOME</a></li>
+                <li><a onclick="location.href='#sobre'">SOBRE</a></li>
+                <li><a onclick="location.href='#contato'">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="conteudo">
+        <div>
+            <div>
+                <img src="../prototipoFigma/imagens/html_css_js.jpg" alt="">
+            </div>
+            <div>
+                <h1>Minha Primeira Página em HTML</h1>
+            </div>
+        </div>
+    
+        <div class="login-container">
+            <label>Email</label>
+            <input type="email" id="id_email" name="email" placeholder="Value" required>
+
+            <label>Password</label>
+            <input type="password" id="id_senha" name="senha" placeholder="Value" required>
+
+            <button onclick="login();">Sign In</button>
+
+            <a href="">Forgot Password?</a>
+        </div>
+    </div>
+
+    <div class="texto" id="sobre">
+        <h1>Sobre</h1>
+        <p>Meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+            meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+            meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+            meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+        </p>
+    </div>
+
+    <div class="texto" id="contato">
+        <h1>Contato</h1>
+        <p>Meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+            meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+            meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+            meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...meu texto...
+        </p>
+    </div>
+
+
+</body>
+</html>

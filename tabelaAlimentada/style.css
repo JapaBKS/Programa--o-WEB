@@ -1,0 +1,31 @@
+.login-container {
+    background-color: #fff;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+.form-container {
+    margin-bottom: 20px;
+}

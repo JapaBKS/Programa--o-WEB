@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+    <script>
+        function addToList() {
+            const inputElement = document.getElementById('id_valor');
+            const listElement = document.getElementById('id_lista');
+            const valor = inputElement.value.trim(); //remove os espaços em branco
+
+            if (valor) {
+                const listItem = document.createElement('li');
+                listItem.textContent = valor;
+                listElement.appendChild(listItem);
+                inputElement.value = '';
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="inicial.html">HOME</a></li>
+                <li><a href="inicial.html">SOBRE</a></li>
+                <li><a href="inicial.html">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="topo">
+        <div>
+            <img src="../prototipoFigma/imagens/html_css_js.jpg" alt="">
+        </div>
+        <div class="titulo">
+            <h1>Minha Primeira Página em HTML</h1>
+        </div>
+        
+    </div>
+
+    <div class="caixa">
+        <h2>Digite e adicione os itens à uma lista ordenada</h2>
+        <br>
+        <input type="text" id="id_valor" placeholder="Digite um valor">
+        <button onclick="addToList()">Adicionar</button>
+
+        <ol id="id_lista"></ol>
+    </div>
+</body>
+</html>
