@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Minha Página HTML</title>
+		<script>
+			function exec(){
+				var conteudo = document.getElementById("exec_02").value;
+				alert(conteudo);
+			}
+			
+			function valida(){
+				var conteudo = document.getElementById("exec_02").value;			
+				if(conteudo == "Giulio"){
+					alert("Deu certo!");
+				}else{
+					alert("Não deu certo!");
+				}				
+			}
+			
+			function validaSwitch(){
+				var conteudo = document.getElementById("exec_02").value;						
+				switch(conteudo){
+					case "Giulio":
+						alert("Deu certo!");
+						break;
+					case "Bordin":
+						alert("Deu certo também!");
+						break;
+					default:
+						alert("Digite um nome válido!");
+				}
+			}
+			
+			function getMonthName(mo){
+				mo--;
+				const months = [
+				"Jan","Fev","Mar","Abr","Mai","Jun",
+				"Jul","Ago","Set","Out","Nov"
+				];
+				if(months[mo]){
+					return months[mo];
+				}else{
+					throw new Error("getMonthName: indice inexistente, indice digitado:" + mo);
+				}
+			}
+			
+			function getMes(){
+				var myMonth = document.getElementById("exec_03").value;
+				
+				if(myMonth < 1 || myMonth > 12){
+					alert("Não vai dar!");
+				}else{
+					try{
+						monthName = getMonthName(myMonth);
+						alert(monthName);
+					}catch(e){
+						monthName = "desconhecido!";
+						alert(monthName);
+						console.log(e);
+					}
+				}
+			}
+			
+			function laco(){
+				for(var i=0;i<10;i++){
+					console.log(i);
+				}
+			}
+			
+			function exec_04(){
+				const nomes = [
+				"A","B","C","D","E",
+				"A1","B1","C1","D1","E1"				
+				];
+				const ul = document.getElementById("listaPai");
+				for(var i=0;i<10;i++){
+					const li = document.createElement("li");
+					li.textContent = nomes[i];
+					ul.appendChild(li);
+				}
+			}
+			
+			function exec_05(){
+				const nomes = [
+				"A","B","C","D","E",
+				"A1","B1","C1","D1","E1"				
+				];
+				const select = document.getElementById("listaSelect");
+				for(var i=0;i<10;i++){
+					const option = document.createElement("option");
+					option.value = i;
+					option.textContent = nomes[i];
+					select.appendChild(option);
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1> Minha segunda aula de Javascript </h1>
+		<label for="">Exercício 02</label>
+		<input type="text" id="exec_02" name="exec_02">
+		<button onclick="validaSwitch();">Teste de Nome!</button>
+		
+		<hr>
+		
+		<label for="">Exercício 03</label>
+		<input type="text" id="exec_03" name="exec_03">
+		<button onclick="getMes();">Retorna o nome do mês</button>		
+		
+		<hr>
+		<button onclick="laco();">Verifique console.log</button>		
+		
+		<hr>
+		<button onclick="exec_04();">Gerar Lista</button>		
+		<ul id="listaPai"></ul>
+		
+		<hr>
+		<label for="">Exercício 05</label>
+		<button onclick="exec_05();">Gerar Select</button>		
+		<select id="listaSelect" name="listaSelect">
+		</select>
+		
+	</body>
+</html>

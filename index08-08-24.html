@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Minha Página HTML</title>
+		<!-- <script src="script.js"></script> -->
+		<script>
+			function consultar(){
+				var id_teste = "";
+				var id_testenumber = "";
+				var id_testedate = "";
+				
+				id_teste = document.getElementById("id_teste").value;
+				id_testenumber = document.getElementById("id_testenumber").value;
+				id_testedate = document.getElementById("id_testedate").value;
+				
+				console.log("para id_teste = ",id_teste);
+				console.log("para id_testenumber = ",id_testenumber);
+				console.log("para id_testedate = ",id_testedate);			
+			}
+			
+			/**
+				EXERCICIO:
+				Crie duas variáveis com email e senha de verificação.
+				Se o valor que estiver sendo recebido por getElementById for igual
+				aos valores email e senha de verificação, então faça um redirecionamento
+				da página para www.google.com.br, porém, antes disso, dispare um alerta
+				dizendo que o usuário e senha digitados estão corretos, caso contrário,
+				dispare um alerta dizendo: "E-Mail e senha Errados!"
+			**/
+			function login(){
+				var email = "";
+				var senha = "";
+				var email_verifica = "teste@teste";
+				var senha_verifica = "123456";
+				email = document.getElementById("email").value;
+				senha = document.getElementById("senha").value;
+				
+				if(email === email_verifica && senha === senha_verifica){
+					alert("Deu certo!");
+					window.location = "https://www.google.com.br";
+				}else{
+					alert("Deu errado!");
+				}
+			}
+			
+			function arrays(){
+				var posicao = document.getElementById("id_posicao").value;
+								
+				const nomes = []; // Declaro o array
+				nomes.push("Giulio"); // atribuo o primeiro valor
+				nomes.push("Domenico"); // atribuo o segundo valor
+				nomes.push("Bordin"); // atribuio o terceiro valor
+				
+				if(posicao <= (nomes.length-1)){
+					alert("O tamanho do meu array é:" + nomes.length); // exibo um alerta com o tamanho do array
+					document.getElementById("id_resultado").innerHTML = nomes[posicao];
+				}else{
+					alert("Posição não existe!");
+				}
+				
+			}
+			
+			function objetos(){
+				const sales = "Toyota";
+				function carTypes(name){
+					return name === "Honda" ? name: `Sorry, we don´t sell ${name}. `;
+				}
+				const car = { myCar: "Fusca", getCar: carTypes("Fusca"), special: sales };
+				console.log(car);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Bem-vindo ao HTML!</h1>
+		<ul>
+		<li><input type="text" id="id_teste" name="teste">
+		<li><input type="number" id="id_testenumber" name="testenumber">
+		<li><input type="date" id="id_testedate" name="testedate">
+		<li><button onclick="consultar();">Consultar</button>
+		</ul>
+		<hr>
+		<div>
+			<div>E-Mail</div>
+			<div><input type="text" id="email" name="email"></div>
+		</div>
+		<div>
+			<div>Senha</div>
+			<div><input type="password" id="senha" name="senha"></div>
+		</div>
+		<div>
+			<div><button onclick="login();">Log In</button></div>
+		</div>
+		<hr>
+		<div>
+			<div>Posição</div>
+			<div><input type="number" id="id_posicao" name="id_posicao"></div>
+		</div>
+		<div>
+			<div><button onclick="arrays();">Chamar a função ARRAYS</button></div>
+		</div>
+		<div>
+			<h1 id="id_resultado"></h1>
+		</div>
+		<hr>
+		<div>
+			<div><button onclick="objetos();">Chamar a função OBJETOS</button></div>
+		</div>
+	</body>
+</html>
